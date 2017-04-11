@@ -3,3 +3,14 @@
 <p>
  <% link_to 'New Event', new_location_path %>
 </p>
+
+<% @events.each do |current_events|%>
+  <div class="event">
+    <h3>Name: <%= current_events.name %></h3>
+    <h4>Date:<%= current_events.date %></h4>
+    
+    <%= link_to current_events.name, event_path(current_events) %>
+  </div>
+
+
+<% end %>
